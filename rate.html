@@ -10,7 +10,7 @@
 <body>
 
     <a type="button" class="btn btn-danger m-2" href="index.html">back</a>
-    <div class="container mt-5 row">
+    <div class="container mt-4 row">
        
         <h1 class="text-center">Calculate Rate</h1>
         <div class="m-1 col-sm-4 border rounded bg-light">
@@ -23,10 +23,28 @@
       </div>
       <div class="m-1 col-sm-4 border rounded bg-light">
         <label for="exampleFormControlInput1" class="form-label">Time: </label>
-        <input type="number" class="form-control m-1" id="time" placeholder="enter number of years" required>
+        <input type="number" class="form-control m-1" id="time" required>
+        <div class="input-group m-2">
+          <div class="input-group-prepend">
+          </div>
+          <select class="py-1 border-secondary custom-select rounded bg-light" id="droptime">
+              <option value="days" >Days</option>
+              <option value="months">Months</option>
+              <option value="years" >Years</option>
+          </select>
+          </div>
       </div>
-      <div align="right" class="my-3">
-        <button type="submit" onclick="f1()" class="btn btn-success px-4 mb-3">Calculate</button>
+      <!-- <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        </div>
+        <select class=" border-secondary custom-select rounded bg-light" id="inputGroupSelect01">
+            <option value="days" >Days</option>
+            <option value="months">Months</option>
+            <option value="years" >Years</option>
+        </select>
+        </div> -->
+      <div align="right" class="my-1">
+        <button type="submit" onclick="f1()" class="btn btn-success px-5 mb-3">Calculate</button>
       </div>
       <div class="m-1 col-sm-4 border rounded bg-light">
         <label for="exampleFormControlInput1" class="form-label">Rate: </label>
@@ -43,8 +61,20 @@
             var p = document.getElementById("Principal").value;
             var si = document.getElementById("si").value;
             var t = document.getElementById("time").value;
-            var result = (100 * si)/(p*t);
-            document.getElementById("red").innerHTML= result.toFixed(2);
+            var droptime = document.getElementById("droptime").value;
+            
+            if(droptime == "days"){
+              var nt = t/365;
+            }
+            else if(droptime == "months"){
+              var nt = t/12;
+            }
+            else{
+              var nt = t;
+            }
+            
+            var result = (100 * si)/(p*nt);
+            document.getElementById("red").innerHTML= result.toFixed(3);
         }
         
         

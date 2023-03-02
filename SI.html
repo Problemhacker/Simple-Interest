@@ -9,7 +9,7 @@
 </head>
 <body>
     <a type="button" class="btn btn-danger m-2" href="index.html">back</a>
-    <div class="container mt-5 row">
+    <div class="container mt-4 row">
         
         <h1 class="text-center">Calculate SI</h1>
     <div class="m-1 col-sm-4 border rounded bg-light">
@@ -22,10 +22,19 @@
       </div>
       <div class="m-1 col-sm-4 border rounded bg-light">
         <label for="exampleFormControlInput1" class="form-label">Time: </label>
-        <input type="number" class="form-control m-1" id="time" placeholder="enter number of years" required>
+        <input type="number" class="form-control m-1" id="time" required>
+        <div class="input-group m-2">
+          <div class="input-group-prepend">
+          </div>
+          <select class="py-1 border-secondary custom-select rounded bg-light" id="droptime">
+              <option value="days" >Days</option>
+              <option value="months">Months</option>
+              <option value="years" >Years</option>
+          </select>
+          </div>
       </div>
-      <div align="right" class="my-3">
-        <button type="submit" onclick="f1()" class="btn btn-success px-4 mb-3">Calculate</button>
+      <div align="right" class="my-1">
+        <button type="submit" onclick="f1()" class="btn btn-success px-5 mb-3">Calculate</button>
       </div>
       <div class="m-1 col-sm-4 border rounded bg-light">
         <label for="exampleFormControlInput1" class="form-label">Simple Interest: </label>
@@ -42,8 +51,20 @@
             var p = document.getElementById("Principal").value;
             var r = document.getElementById("rate").value;
             var t = document.getElementById("time").value;
-            var result = (p*r*t)/100;
-            document.getElementById("red").innerHTML= result.toFixed(2);
+            var droptime = document.getElementById("droptime").value;
+            
+            if(droptime == "days"){
+              var nt = t/365;
+            }
+            else if(droptime == "months"){
+              var nt = t/12;
+            }
+            else{
+              var nt = t;
+            }
+
+            var result = (p*r*nt)/100;
+            document.getElementById("red").innerHTML= result.toFixed(3);
         }
         
         
