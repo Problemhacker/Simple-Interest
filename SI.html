@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SI</title>
+</head>
+<body>
+    <a type="button" class="btn btn-danger m-2" href="index.html">back</a>
+    <div class="container mt-5 row">
+        
+        <h1 class="text-center">Calculate SI</h1>
+    <div class="m-1 col-sm-4 border rounded bg-light">
+        <label for="exampleFormControlInput1" class="form-label">Principal amt: </label>
+        <input type="number" class="form-control m-1" id="Principal" placeholder="₹" required>
+      </div>
+      <div class="m-1 col-sm-4 border rounded bg-light">
+        <label for="exampleFormControlInput1" class="form-label">Rate: </label>
+        <input type="number" class="form-control m-1" id="rate" placeholder="%" required>
+      </div>
+      <div class="m-1 col-sm-4 border rounded bg-light">
+        <label for="exampleFormControlInput1" class="form-label">Time: </label>
+        <input type="number" class="form-control m-1" id="time" placeholder="enter number of years" required>
+      </div>
+      <div align="right" class="my-3">
+        <button type="submit" onclick="f1()" class="btn btn-success px-4 mb-3">Calculate</button>
+      </div>
+      <div class="m-1 col-sm-4 border rounded bg-light">
+        <label for="exampleFormControlInput1" class="form-label">Simple Interest: </label>
+        <p id="red" class="border rounded p-2"></p>
+      </div>
+      
+    
+    </div>
+
+
+      <script>
+        
+         function f1(){
+            var p = document.getElementById("Principal").value;
+            var r = document.getElementById("rate").value;
+            var t = document.getElementById("time").value;
+            var result = (p*r*t)/100;
+            document.getElementById("red").innerHTML= result.toFixed(2);
+        }
+        
+        
+
+      </script>
+</body>
+</html>
