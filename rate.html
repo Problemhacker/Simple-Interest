@@ -9,6 +9,23 @@
 <link rel="stylesheet" href="style.css">    
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SI</title>
+<style>body {
+background: linear-gradient(360deg, #2ECC40, #d7e3d4 , white);
+background-size: 400% 400%;
+  animation: gradientBg 10s ease infinite;
+}
+
+@keyframes gradientBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}</style>
 </head>
 
 <body>
@@ -36,12 +53,13 @@
         </select>
       </div>
     </div>
-    <div class="m-1 mt-3 col-sm-4 border border-secondary rounded bg-light">
+<h3 class="text-center">=</h3>
+    <div class="m-1 mt-0 col-sm-4 border border-secondary rounded bg-light">
       <label for="exampleFormControlInput1" class="form-label">Rate: </label>
       <p id="red" class="border bg-white rounded p-1"></p>
     </div>
     <div align="center" class="my-1">
-      <button type="submit" onclick="f1()" class="submit-btn px-5 mt-3"> Calculate </button>
+      <button type="submit" onclick="f1()" class="submit-btn border px-5 mt-3"> Calculate </button>
     </div>
     <!-- <div class="m-1 col-sm-4 border rounded bg-light">
       <label for="exampleFormControlInput1" class="form-label">Rate: </label>
