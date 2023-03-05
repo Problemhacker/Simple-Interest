@@ -36,7 +36,7 @@ background-size: 400% 400%;
     <h3 class="text-center">Calculate Rate</h3>
     <div class="m-1 col-sm-4 border rounded bg-light">
       <label for="exampleFormControlInput1" class="form-label">SI: </label>
-      <input type="number" class="form-control m-1 p-2 border input-field bg-white" id="si" placeholder="" required>
+      <input type="number" class="form-control m-1 p-2 border input-field bg-white" id="si" placeholder="₹" required>
     </div>
     <div class="m-1 col-sm-4 border rounded bg-light">
       <label for="exampleFormControlInput1" class="form-label">Principal amt: </label>
@@ -89,7 +89,7 @@ background-size: 400% 400%;
       }
 
       var result = (100 * si) / (p * nt);
-      document.getElementById("red").innerHTML = result.toFixed(3) + " %";
+      document.getElementById("red").innerHTML = result.toFixed(2) + " %";
     }
 
 

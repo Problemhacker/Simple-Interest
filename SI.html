@@ -57,7 +57,8 @@ background-size: 400% 400%;
 <h3 class="text-center">=</h3>
     <div class="m-1 mt-0 col-sm-4 border border-secondary rounded bg-light">
       <label for="exampleFormControlInput1" class="form-label">Simple Interest: </label>
-      <p id="red" class="border bg-white rounded p-1"></p>
+      <p id="red" class="border m-1 bg-white rounded p-1"></p>
+      <p id="blue" class="small text-secondary m-1 bg-white rounded"></p>
     </div>
     <div align="center" class="my-1">
       <button type="submit" onclick="f1()" class="submit-btn border px-5 mt-3"> Calculate </button>
@@ -87,7 +88,8 @@ background-size: 400% 400%;
       }
 
       var result = (p * r * nt) / 100;
-      document.getElementById("red").innerHTML = result.toFixed(3);
+      document.getElementById("red").innerHTML = "₹ " + result.toFixed(2);
+      document.getElementById("blue").innerHTML = "Rounded ₹ " + Math.round(result).toFixed(2);
     }
 
 

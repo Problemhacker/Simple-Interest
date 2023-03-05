@@ -20,19 +20,6 @@
   left:-100%;
   z-index: -1;
   transition: all 0.5s ease-in-out;
-  animation: translateX 2s linear infinite;
-}
-
-@keyframes translateX {
-  0% {
-    transform: translateX(-100%);
-  }
-  45% {
-    transform: translateX(100%);
-  }
-  90% {
-    transform: translateX(-100%);
-  }
 }
 
 .submit-btn:hover::before {
@@ -65,9 +52,3 @@
   transform: translateY(-2px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
-
-//background
-
-
-
-
